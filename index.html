@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Theocratic Timeline</title>
+    <script src="js/lib/jquery/jquery.min.js"></script>
+    <script src="js/lib/vis/vis.min.js"></script>
+    <link href="js/lib/vis/vis.css" rel="stylesheet" type="text/css" />
+    <link
+      href="js/lib/vis/vis-timeline-graph2d.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <script src="js/theocratic-timeline.js"></script>
+    <script src="js/theocratic-timeline-spreadsheet-data.js"></script>
+    <link href="css/theocratic-timeline.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <h1>Theocratic Timeline</h1>
+    <div id="timeline-controls">
+      <button onclick="javascript: timeline.fit();">Fit</button>
+      <button onclick="javascript: timeline.moveTo(new Date(-4000,1,1));">
+        Adam
+      </button>
+      <button onclick="javascript: timeline.moveTo(new Date('-000002-10-01'));">
+        Jesus
+      </button>
+      <button onclick="javascript: timeline.moveTo(new Date());">Today</button>
+    </div>
+    <div id="visualization"></div>
+    <div id="details">
+      <div id="details-left-panel">
+        <h2 id="details-header">Click an event to see the details here...</h2>
+        <div>
+          <span><b>Start date: </b></span><span id="details-start-date"></span>
+        </div>
+        <div>
+          <span><b>End date: </b></span><span id="details-end-date"></span>
+        </div>
+        <div>
+          <b>Notes: </b>
+          <p id="details-notes"></p>
+        </div>
+        <div>
+          <a id="details-reference" href="#" target="_blank">Read more</a>
+        </div>
+      </div>
+      <div id="details-right-panel">
+        <img id="details-image" src="images/noimage.jpg" />
+      </div>
+    </div>
+    <script>
+      // Let's initialize the timeline
+      var container = document.getElementById("visualization");
+
+      var options = {
+        editable: true,
+        minHeight: 400,
+        editable: false,
+        align: "center",
+        zoomMin: 2073600000,
+        start: new Date(1, 0, 0),
+        format: {
+          minorLabels: function(date, scale, step) {
+            return formatMinorLabel(date, scale, step);
+          },
+          majorLabels: function(date, scale, step) {
+            return formatMajorLabel(date, scale, step);
+          }
+        },
+        tooltip: {
+          followMouse: true
+        }
+      };
+
+      var spreadsheetItems = new vis.DataSet();
+
+      var timeline = new vis.Timeline(container, spreadsheetItems, options);
+
+      timeline.on("select", timelineOnSelect);
+
+      loadDataFromSpreadsheet(timeline.itemsData);
+    </script>
+  </body>
+</html>

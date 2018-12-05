@@ -1,0 +1,178 @@
+body,
+html {
+  font-family: Segoe UI Light, Arial, sans-serif;
+  font-size: 12px;
+}
+
+/* Timeline elements */
+
+.vis-item {
+  background-image: linear-gradient(to left, #97b0f8 100%, #fff);
+}
+.vis-item.vis-selected {
+  background-image: linear-gradient(to right, #fff758 100%, #fff);
+}
+.open-start {
+  border-left: 0px;
+  background-image: linear-gradient(to left, #97b0f8 80%, #fff);
+}
+.open-start.vis-selected {
+  background-image: linear-gradient(to left, #fff758 80%, #fff);
+}
+.open-end {
+  border-right: 0px;
+  background-image: linear-gradient(to right, #97b0f8 80%, #fff);
+}
+.open-end.vis-selected {
+  background-image: linear-gradient(to right, #fff758 80%, #fff);
+}
+.open-start-end {
+  border-left: 0px;
+  border-right: 0px;
+  background-image: linear-gradient(
+    to right,
+    #fff,
+    #fff 5%,
+    #97b0f8 15%,
+    #97b0f8 85%,
+    #fff 95%
+  );
+}
+.open-start-end.vis-selected {
+  background-image: linear-gradient(
+    to right,
+    #fff,
+    #fff 5%,
+    #fff758 15%,
+    #fff758 85%,
+    #fff 95%
+  );
+}
+.modern-history {
+  color: #800080;
+  border-color: #800080;
+  background-image: linear-gradient(to left, #d8bfd8 100%, #fff);
+}
+.modern-history.open-start {
+  background-image: linear-gradient(to left, #d8bfd8 80%, #fff);
+}
+.modern-history.open-end {
+  background-image: linear-gradient(to right, #d8bfd8 80%, #fff);
+}
+.modern-history.open-start-end {
+  background-image: linear-gradient(
+    to right,
+    #fff,
+    #fff 5%,
+    #d8bfdc 15%,
+    #d8bfdc 85%,
+    #fff 95%
+  );
+}
+.before-jesus {
+  color: #8b4513;
+  border-color: #8b4513;
+  background-image: linear-gradient(to left, #f5deb3 100%, #fff);
+}
+.before-jesus.open-start {
+  background-image: linear-gradient(to left, #f5deb3 80%, #fff);
+}
+.before-jesus.open-end {
+  background-image: linear-gradient(to right, #f5deb3 80%, #fff);
+}
+.before-jesus.open-start-end {
+  background-image: linear-gradient(
+    to right,
+    #fff,
+    #fff 5%,
+    #f5deb3 15%,
+    #f5deb3 85%,
+    #fff 95%
+  );
+}
+.jesus-earth {
+  color: #b3000c;
+  border-color: #b3000c;
+  background-image: linear-gradient(to left, #fb8e8e 100%, #fff);
+}
+.jesus-earth.open-start {
+  background-image: linear-gradient(to left, #fb8e8e 80%, #fff);
+}
+.jesus-earth.open-end {
+  background-image: linear-gradient(to right, #fb8e8e 80%, #fff);
+}
+.jesus-earth.open-start-end {
+  background-image: linear-gradient(
+    to right,
+    #fff,
+    #fff 5%,
+    #fb8e8e 15%,
+    #fb8e8e 85%,
+    #fff 95%
+  );
+}
+.open-start.vis-selected,
+.modern-history.open-start.vis-selected,
+.before-jesus.open-start.vis-selected,
+.jesus-earth.open-start.vis-selected {
+  background-image: linear-gradient(to left, #fff758 80%, #fff);
+}
+.open-end.vis-selected,
+.modern-history.open-end.vis-selected,
+.before-jesus.open-end.vis-selected,
+.jesus-earth.open-end.vis-selected {
+  background-image: linear-gradient(to right, #fff758 80%, #fff);
+}
+.open-start-end.vis-selected,
+.modern-history.open-start-end.vis-selected,
+.before-jesus.open-start-end.vis-selected,
+.jesus-earth.open-start-end.vis-selected {
+  background-image: linear-gradient(
+    to right,
+    #fff,
+    #fff 5%,
+    #fff758 15%,
+    #fff758 85%,
+    #fff 95%
+  );
+}
+div.vis-tooltip {
+  font-family: Segoe UI Light, Arial, sans-serif;
+  font-size: 12px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  border: 1px solid #808074;
+  padding: 2px;
+}
+.vis-item .vis-item-content {
+  padding: 2px;
+}
+.vis-item.vis-range {
+  border-radius: 0px;
+}
+/*Controls panel*/
+#timeline-controls {
+  padding: 12px 0px;
+}
+/* Details section */
+#details {
+  margin: 12px;
+}
+#details-left-panel {
+  width: 30%;
+  float: left;
+}
+#details-right-panel {
+  width: 70%;
+  float: left;
+}
+#details-image {
+  max-height: 300px;
+  padding: 6px;
+  border: solid 1px #808074;
+  margin: 0px 24px;
+}
+#details-notes {
+  margin-left: 12px;
+}
